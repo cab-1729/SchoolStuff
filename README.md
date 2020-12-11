@@ -1,6 +1,8 @@
 public to view but for personal usage only
 
 Programs that automate the following parts of online learning provided by my school:
+
+
 	getting all the educational material in the form of pdfs from the school website
 	
 	
@@ -12,6 +14,8 @@ Programs that automate the following parts of online learning provided by my sch
 	
 
 Details:
+
+
 	All the data files contain personal informartion and hence are not in this repository.
 	
 	
