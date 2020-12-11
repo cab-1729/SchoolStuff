@@ -24,6 +24,8 @@ Details:
 	
 	All programes are ran using .exe files on windows (hence I don't need the code so I stashed it here)
 	
+	The School material is to be run every 3-4 weeks because the pdfs are taken down when they are older
+	
 	
 	The "Zoom class.exe" is run every morning using the task manager and it wait for the time to occur
 	
