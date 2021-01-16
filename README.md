@@ -22,7 +22,7 @@ Details:
 	Code pictures are taken using the amazing https://codeimg.io/
 	
 	
-	All programes are ran using .exe files on windows (hence I don't need the code so I stashed it here)
+	All programes are ran using .exe files on windows (hence I don't need the code so I stashed it here), except Schoolmaterial, because the school website is often subject to alteration
 	
 	The School material is to be run every 3-4 weeks because the pdfs are taken down when they are older
 	
