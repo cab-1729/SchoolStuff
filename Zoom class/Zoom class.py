@@ -11,6 +11,12 @@ from sys import exit
 today=date.today()
 day=today.weekday();
 if day==6 or day==5:exit(0)#sunday or saturday
+memory=shelve('holidays')
+try:#check holiday
+    memory[today.strftime('%d-%m-%Y')]
+    memory.close()
+    exit(0)
+except KeyError:memory.close()
 week=('Monday','Tuesday','Wednesday','Thursday','Friday')
 with open('settings.json') as f:
     memory=loads(f.read())
@@ -61,4 +67,3 @@ for subject,room,t in zip(subjects,rooms,times):
     reminder.mainloop()
     popen(cmd_class)
 popen(cmd_day)
-
