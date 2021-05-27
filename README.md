@@ -1,4 +1,4 @@
-public to view but for personal usage only
+public to view but for personal use only
 
 Programs that automate the following parts of online learning provided by my school:
 
