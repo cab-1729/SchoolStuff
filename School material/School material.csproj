@@ -6,6 +6,7 @@
 		<SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
 		<PublishSingleFile>true</PublishSingleFile>
 		<OutputType>Exe</OutputType>
+		<ApplicationIcon>building.ico</ApplicationIcon>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
     		<RootNamespace>School_material</RootNamespace>
   	</PropertyGroup>
