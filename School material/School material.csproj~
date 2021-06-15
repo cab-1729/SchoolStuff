@@ -8,7 +8,8 @@
 		<OutputType>Exe</OutputType>
 		<ApplicationIcon>building.ico</ApplicationIcon>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
-    		<RootNamespace>School_material</RootNamespace>
+		<RootNamespace>School_material</RootNamespace>
+		<Authors>cab-1729</Authors>
   	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
