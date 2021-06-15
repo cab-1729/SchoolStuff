@@ -41,7 +41,6 @@ class Program{
 				"document.querySelector(\'#grdPost > tbody > tr:nth-child(18) > td > table > tbody > tr > td:nth-child("+page+") > a\').click();",
 				"if(document.querySelector('#grdPost > tbody > tr:nth-child('+document.querySelector('#grdPost > tbody').childElementCount+') > td > table > tbody > tr > td:nth-child("+page+")').innerHTML!=\'<span>"+page+"</span>\')throw Error;"
 			);//go to next page and wait
-		Environment.Exit(0);//testing
 		browser.Quit();//close internet
 		Console.WriteLine("Got all new material\nKilled Crawler\nMemorizing ...");
 		File.WriteAllText("memory.json",JsonConvert.SerializeObject(memory,Formatting.Indented));//memorize
@@ -53,12 +52,12 @@ class Program{
 		RunJS(go_to_page);
 		RunJS(wait_for_page);//wait for page
 		ReadOnlyCollection<object> table_items=(ReadOnlyCollection<object>)RunJS("let ret=[],table=document.querySelector(\'#grdPost > tbody\').children;let l=table.length-2;for(let i=1;i<l;i++)ret.push(table[i].children[2].innerText);return ret");//get all items on page
-		byte i=2,j,content_number;int _;string subject;List<byte> haves;
+		byte i=2,j,content_number;int dash1,dash2;string subject;List<byte> haves;
 		foreach(string table_value in table_items){
 			if(subjects.IsMatch(table_value)){//my subject
-				_=table_value.IndexOf('-');
-				subject=table_value.Substring(_+2,table_value.Length-_-14);
-				content_number=Convert.ToByte(table_value.Substring(8,_-9));
+				hyphen=table_value.IndexOf('-');
+				subject=table_value.Substring(hyphen+2,table_value.LastIndexOf('-')-hyphen-3);
+				content_number=Convert.ToByte(table_value.Substring(8,hyphen-9));
 				haves=memory[subject];
 				if(!haves.Contains(content_number)){//need material
 					//download
