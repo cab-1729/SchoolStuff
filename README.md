@@ -27,7 +27,7 @@ Details:
 	The School material is to be run every 3-4 weeks because the pdfs are taken down when they are older
 	
 	
-	The "Zoom class.exe" is run every morning using the task manager and it waits for the time to occur
+	The "Zoom class.exe" is run every morning using the task scheduler and it waits for the time to occur
 	
 	
 	The  "send assessment.exe" is run by putting the pdfs into the "pages" folder in the manner demonstrated after which the program is run.
