@@ -1,0 +1,8 @@
+{
+	"id": "your id",
+	"password": "your password",
+	"portal": "link to school portal website",
+	"chromedriver directory": "directory in which chromedriver.exe resides",
+	"content regex": "^Content \\d+ - (Physics|Mathematics|English|Chemistry) - Class XII$",
+	"download in": "folder to dump pdfs, use {0} to reference subject name"
+}
