@@ -3,6 +3,6 @@
 	"password": "your password",
 	"portal": "link to school portal website",
 	"chromedriver directory": "directory in which chromedriver.exe resides",
-	"content regex": "^Content \\d+ - (Physics|Mathematics|English|Chemistry) - Class XII$",
+	"content regex": "^Content \\d+ - (Name of subjects as in portal separated by '|') - Class class_in_capital_roman_numeral$",
 	"download in": "folder to dump pdfs, use {0} to reference subject name"
 }
