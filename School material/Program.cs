@@ -15,7 +15,7 @@ class Program{
 	static Dictionary<string,List<byte>> memory;
 	static Regex subjects;
 	static string download_dir;
-	static void Main(string[] args){
+	static void _Main(string[] args){
 		Console.ForegroundColor=ConsoleColor.Green;
 		Console.WriteLine("Configuring settings ...");
 		disable_security=new Dictionary<string,object>{{"behavior","allow"}};
