@@ -1,4 +1,4 @@
-from datetime import datetime,date,timedelta
+from datetime import timedelta,time,datetime,date
 from tkinter import *
 from os import popen
 from shelve import open as shelve
@@ -24,7 +24,10 @@ with open('settings.json') as f:
     start_meeting=partial(Popen,[memory['exe_path']])
     cmd_class=memory['command_after_class']
     cmd_day=memory['command_after_day']
+    over=memory['over by']
+    over=datetime.combine(today,time(hour=int(over[:2]),minute=int(over[3:])))
 dow=week[day]
+if over<datetime.now():exit(0)#school over
 #view whole schedule
 tt=Tk()
 tt.lift()
