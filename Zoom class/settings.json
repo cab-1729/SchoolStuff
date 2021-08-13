@@ -3,5 +3,5 @@
     "command_after_class": "taskkill /f /im Zoom.exe",
 	"over by": "13:00",
     "alert": 2,
-    "exe_path": "C:\\Users\\Lenovo\\AppData\\Roaming\\Zoom\\bin\\Zoom.exe"
+    "exe_path": "C:\\Users\\USER\\AppData\\Roaming\\Zoom\\bin\\Zoom.exe"
 }
