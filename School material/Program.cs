@@ -15,7 +15,7 @@ class Program{
 	static Dictionary<string,List<byte>> memory;
 	static Regex subjects;
 	static string download_dir;
-	static void _Main(string[] args){
+	static void Main(string[] args){
 		Console.ForegroundColor=ConsoleColor.Green;
 		Console.WriteLine("Configuring settings ...");
 		disable_security=new Dictionary<string,object>{{"behavior","allow"}};
@@ -34,13 +34,16 @@ class Program{
 		RunJS("__doPostBack(\'grdUnreadAcademicPost\',\'Select$0\');");//click "Click" beside "Learning material"
 		RunJS("document.querySelector(\'#learningMaterials > div > input\').click();");//click "Learning Materials"
 		//in page with material
-		byte pages=Convert.ToByte(RunJS("return document.querySelector(\'#grdPost > tbody > tr:nth-child(18) > td > table > tbody > tr\').childElementCount;"));
 		Page(1,"","");
-		for(byte page=2;page<=pages;page++)
-			Page(page,
-				"document.querySelector(\'#grdPost > tbody > tr:nth-child(18) > td > table > tbody > tr > td:nth-child("+page+") > a\').click();",
-				"if(document.querySelector('#grdPost > tbody > tr:nth-child('+document.querySelector('#grdPost > tbody').childElementCount+') > td > table > tbody > tr > td:nth-child("+page+")').innerHTML!=\'<span>"+page+"</span>\')throw Error;"
-			);//go to next page and wait
+		if(Convert.ToBoolean(RunJS("return document.querySelector(\'#grdPost > tbody > tr:nth-child(18) > td > table > tbody > tr\')!=null"))){//if page numbers present at bottom
+			byte pages=Convert.ToByte(RunJS("return document.querySelector(\'#grdPost > tbody > tr:nth-child(18) > td > table > tbody > tr\').childElementCount;"));
+			for(byte page=2;page<=pages;page++)
+				Page(page,
+					"document.querySelector(\'#grdPost > tbody > tr:nth-child(18) > td > table > tbody > tr > td:nth-child("+page+") > a\').click();",
+					"if(document.querySelector('#grdPost > tbody > tr:nth-child('+document.querySelector('#grdPost > tbody').childElementCount+') > td > table > tbody > tr > td:nth-child("+page+")').innerHTML!=\'<span>"+page+"</span>\')throw Error;"
+				);//go to next page and wait
+		}
+		else{Console.WriteLine("\tNo More Pages");}
 		browser.Quit();//close internet
 		Console.WriteLine("Got all new material\nKilled Crawler\nMemorizing ...");
 		File.WriteAllText("memory.json",JsonConvert.SerializeObject(memory,Formatting.Indented));//memorize
